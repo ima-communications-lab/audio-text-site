@@ -1,6 +1,6 @@
 body {
-    margin: 0;
-    padding: 0;
+    margin: 20px;
+    padding: 20px;
     background-color: black;
     color: white;
     font-family: Arial, sans-serif;
@@ -11,8 +11,51 @@ body {
     overflow: hidden;
 }
 
+/* 左上角文字样式 */
+#top-left-text {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+/* 右上角文字样式 */
+#top-right-text {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-align: right;
+}
+
 #content {
     text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* 标题样式 */
+#title {
+    font-size: 3rem; /* 大标题字体 */
+    font-family: "Times New Roman", serif; /* 花体字体 */
+}
+
+/* 描述段落样式 */
+#description {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* 页脚文字 */
+.footer {
+    text-align: center;
+    font-size: 0.8rem;
+    padding: 10px;
+    background-color: #660000; /* 页脚背景稍深 */
 }
 
 audio {
