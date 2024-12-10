@@ -1,0 +1,12 @@
+{
+  "pages": [
+    {
+      "text": "这是第一个页面的文字。",
+      "audio": "assets/audio1.mp3"
+    },
+    {
+      "text": "这是第二个页面的文字。",
+      "audio": "assets/audio2.mp3"
+    }
+  ]
+}
