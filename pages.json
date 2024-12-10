@@ -3,14 +3,14 @@
     {
       "text": "这是第一个页面的文字。",
       "title": "Sharp Turn",
-      "artist": "Yawen Li",
+      "artist": "Artist: Yawen Li",
       "description": "In the dream, the protagonist gets distracted while driving, leading to a car accident, and ultimately wakes up in a state of tension and fear to the sound of an alarm clock. The work aims to provide the audience with an immersive dreaming experience. While composing the audio, the creator tries to capture her personal experience of being jolted awake by an alarm clock in a dream.",
       "audio": "assets/audio1.mp3"
     },
     {
       "text": "这是第二个页面的文字。",
       "title": "Sharp",
-      "artist": "Yawen",
+      "artist": "Artist: Yawen",
       "description": "In the dream, the protagonist gets distracted while driving, leading to a car accident, and ultimately wakes up in a state of tension and fear to the sound of an alarm clock. The work aims to provide the audience with an immersive dreaming experience. While composing the audio, the creator tries to capture her personal experience of being jolted awake by an alarm clock in a dream.",
       "audio": "assets/audio2.mp3"
     }
