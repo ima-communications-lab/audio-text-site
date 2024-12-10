@@ -50,6 +50,13 @@ body {
     line-height: 1.5;
 }
 
+/* text样式并且text是红色 */
+.text {
+    color: red;
+}
+
+
+
 /* 页脚文字 */
 .footer {
     grid-area: footer;
