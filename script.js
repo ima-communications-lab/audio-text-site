@@ -1,30 +1,36 @@
-let currentPage = 0;
+document.addEventListener("DOMContentLoaded", () => {
+    const titleElement = document.getElementById("title");
+    const artistElement = document.getElementById("artist");
+    const textElement = document.getElementById("text");
+    const audioElement = document.getElementById("audio");
 
-// 从 JSON 文件加载页面数据
-fetch('pages.json')
-    .then(response => response.json())
-    .then(data => {
-        const pages = data.pages;
-        const textElement = document.getElementById('text');
-        const audioElement = document.getElementById('audio');
+    fetch("pages.json")
+        .then(response => response.json())
+        .then(data => {
+            let currentIndex = 0;
 
-        function updatePage(index) {
-            if (index >= 0 && index < pages.length) {
-                currentPage = index;
-                textElement.textContent = pages[index].text;
-                audioElement.src = pages[index].audio;
+            function updateContent() {
+                const page = data[currentIndex];
+                titleElement.textContent = page.title;
+                artistElement.textContent = `Artist: ${page.artist}`;
+                textElement.textContent = page.text;
+                audioElement.src = page.audio;
+                audioElement.play();
             }
-        }
 
-        // 初始化页面
-        updatePage(currentPage);
+            // 显示初始内容
+            updateContent();
 
-        // 添加键盘事件监听
-        document.addEventListener('keydown', (event) => {
-            if (event.key === 'ArrowRight') {
-                updatePage(currentPage + 1);
-            } else if (event.key === 'ArrowLeft') {
-                updatePage(currentPage - 1);
-            }
-        });
-    });
+            // 添加键盘导航功能
+            document.addEventListener("keydown", (event) => {
+                if (event.key === "ArrowRight") {
+                    currentIndex = (currentIndex + 1) % data.length;
+                    updateContent();
+                } else if (event.key === "ArrowLeft") {
+                    currentIndex = (currentIndex - 1 + data.length) % data.length;
+                    updateContent();
+                }
+            });
+        })
+        .catch(error => console.error("Error loading pages.json:", error));
+});

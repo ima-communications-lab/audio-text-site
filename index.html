@@ -3,14 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Audio Text Site</title>
+    <title>Memory Soundscape</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div id="content">
-    <p id="text"></p>
-    <audio id="audio" autoplay loop></audio>
+<!-- 顶部左侧标题 -->
+<div class="header-left">Communications Lab Fall 2024</div>
+
+<!-- 顶部右侧标题 -->
+<div class="header-right">Memory Soundscape</div>
+
+<!-- 页面主体 -->
+<div class="main-content">
+    <!-- 左侧题目 -->
+    <div class="title" id="title">Loading title...</div>
+    <!-- 右侧描述 -->
+    <div class="description">
+        <p id="artist">Artist: Loading artist...</p>
+        <p id="text">Loading description...</p>
+    </div>
 </div>
+
+<!-- 底部说明文字 -->
+<div class="footer">Memory Soundscape is a collection of audio works. Use the left and right arrow keys to switch between them, and wear headphones to listen.</div>
+
+<!-- 音频播放器 -->
+<audio id="audio" controls loop autoplay hidden></audio>
+
 <script src="script.js"></script>
 </body>
 </html>
