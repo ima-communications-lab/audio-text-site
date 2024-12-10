@@ -1,67 +1,61 @@
 /* 通用样式 */
 body {
-    display: grid;
-    grid-template-areas:
-    "top-left top-right"
-    "main main"
-    "footer footer";
-    grid-template-rows: auto 1fr auto;
-    grid-template-columns: 1fr 1fr;
     margin: 0;
     padding: 0;
-    height: 100vh; /* 页面全屏高度 */
     background-color: #800000; /* 背景色：深红色 */
     color: white; /* 文字颜色 */
     font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* 内容在上下分布 */
+    height: 100vh; /* 页面高度填满 */
+    position: relative;
 }
 
-/* 左上角 Logo */
-#logo-top-left {
-    grid-area: top-left;
+/* 左上角文字样式 */
+#top-left-text {
     position: absolute;
     top: 10px;
     left: 10px;
-    width: 50px; /* Logo 大小 */
-    height: auto;
+    font-size: 0.9rem;
+    font-weight: bold;
 }
 
-/* 右下角 Logo */
-#logo-bottom-right {
-    grid-area: top-right;
+/* 右上角文字样式 */
+#top-right-text {
     position: absolute;
-    bottom: 10px;
+    top: 10px;
     right: 10px;
-    width: 50px;
-    height: auto;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-align: right;
 }
 
 /* 主内容区域 */
 .main-content {
-    grid-area: main;
+    text-align: left;
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* 垂直居中 */
-    align-items: flex-start; /* 左对齐 */
-    padding: 20px;
     gap: 20px;
 }
 
 /* 标题样式 */
 #title {
-    font-size: 3rem; /* 大字体标题 */
+    font-size: 3rem; /* 大标题字体 */
     font-family: "Times New Roman", serif; /* 花体字体 */
 }
 
 /* 描述段落样式 */
 #description {
-    font-size: 1rem; /* 正文文字大小 */
-    line-height: 1.5; /* 行间距 */
+    font-size: 1rem;
+    line-height: 1.5;
 }
 
 /* 页脚文字 */
 .footer {
-    grid-area: footer;
-    text-align: center; /* 居中对齐 */
-    font-size: 0.8rem; /* 页脚文字较小 */
+    text-align: center;
+    font-size: 0.8rem;
     padding: 10px;
+    background-color: #660000; /* 页脚背景稍深 */
 }

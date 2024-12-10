@@ -1,53 +1,36 @@
-// 当前索引
-let currentIndex = 0;
-// 数据存储
-let contentData = [];
+document.addEventListener("DOMContentLoaded", () => {
+    const titleElement = document.getElementById("title");
+    const artistElement = document.getElementById("artist");
+    const textElement = document.getElementById("text");
+    const audioElement = document.getElementById("audio");
 
-// 加载 JSON 数据
-fetch('./assets/data/content.json')
-    .then(response => response.json())
-    .then(data => {
-        contentData = data;
-        loadContent(); // 加载初始内容
-    })
-    .catch(err => console.error('Error loading JSON:', err));
+    fetch("pages.json")
+        .then(response => response.json())
+        .then(data => {
+            let currentIndex = 0;
 
-// 加载内容到页面
-function loadContent() {
-    if (contentData.length === 0) return;
+            function updateContent() {
+                const page = data[currentIndex];
+                titleElement.textContent = page.title;
+                artistElement.textContent = `Artist: ${page.artist}`;
+                textElement.textContent = page.text;
+                audioElement.src = page.audio;
+                audioElement.play();
+            }
 
-    const currentItem = contentData[currentIndex];
+            // 显示初始内容
+            updateContent();
 
-    // 更新标题
-    const titleElement = document.getElementById('title');
-    titleElement.textContent = currentItem.title;
-
-    // 更新描述
-    const descriptionElement = document.getElementById('description');
-    descriptionElement.innerHTML = `
-    <p><strong>Artist:</strong> ${currentItem.artist}</p>
-    <p>${currentItem.text}</p>
-  `;
-
-    // 更新音频
-    const audioElement = document.getElementById('audio-player');
-    audioElement.src = `./assets/audio/${currentItem.audio}`;
-    audioElement.load();
-}
-
-// 切换内容
-function switchContent(direction) {
-    currentIndex += direction;
-    if (currentIndex < 0) currentIndex = contentData.length - 1;
-    if (currentIndex >= contentData.length) currentIndex = 0;
-    loadContent();
-}
-
-// 键盘事件监听
-document.addEventListener('keydown', event => {
-    if (event.key === 'ArrowRight') {
-        switchContent(1); // 下一个
-    } else if (event.key === 'ArrowLeft') {
-        switchContent(-1); // 上一个
-    }
+            // 添加键盘导航功能
+            document.addEventListener("keydown", (event) => {
+                if (event.key === "ArrowRight") {
+                    currentIndex = (currentIndex + 1) % data.length;
+                    updateContent();
+                } else if (event.key === "ArrowLeft") {
+                    currentIndex = (currentIndex - 1 + data.length) % data.length;
+                    updateContent();
+                }
+            });
+        })
+        .catch(error => console.error("Error loading pages.json:", error));
 });
