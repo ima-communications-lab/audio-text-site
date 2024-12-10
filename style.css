@@ -2,17 +2,17 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #add8e6; /* 浅蓝色背景 */
-    color: black;
+    background-color: #800000; /* 背景色：深红色 */
+    color: white; /* 文字颜色 */
     font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 100vh;
+    justify-content: space-between; /* 内容在上下分布 */
+    height: 100vh; /* 页面高度填满 */
     position: relative;
 }
 
-/* 左上角文字 */
+/* 左上角文字样式 */
 #top-left-text {
     position: absolute;
     top: 10px;
@@ -21,7 +21,7 @@ body {
     font-weight: bold;
 }
 
-/* 右上角文字 */
+/* 右上角文字样式 */
 #top-right-text {
     position: absolute;
     top: 10px;
@@ -31,41 +31,31 @@ body {
     text-align: right;
 }
 
-/* 主内容布局 */
+/* 主内容区域 */
 .main-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    flex-wrap: wrap;
+    text-align: left;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 /* 标题样式 */
 #title {
-    font-size: 3rem;
-    font-family: "Times New Roman", serif;
-    font-weight: bold;
+    font-size: 3rem; /* 大标题字体 */
+    font-family: "Times New Roman", serif; /* 花体字体 */
 }
 
 /* 描述段落样式 */
 #description {
-    max-width: 400px;
     font-size: 1rem;
     line-height: 1.5;
 }
 
-/* 音频播放器样式 */
-.audio-player {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-}
-
-/* 页脚样式 */
+/* 页脚文字 */
 .footer {
     text-align: center;
     font-size: 0.8rem;
     padding: 10px;
-    background-color: #87ceeb;
+    background-color: #660000; /* 页脚背景稍深 */
 }
