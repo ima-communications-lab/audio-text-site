@@ -1,65 +1,67 @@
-/* 全局样式 */
+/* 通用样式 */
 body {
+    display: grid;
+    grid-template-areas:
+    "top-left top-right"
+    "main main"
+    "footer footer";
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 1fr 1fr;
     margin: 0;
     padding: 0;
-    background-color: #add8e6;
+    height: 100vh; /* 页面全屏高度 */
+    background-color: #800000; /* 背景色：深红色 */
+    color: white; /* 文字颜色 */
     font-family: Arial, sans-serif;
-    color: black;
+}
+
+/* 左上角 Logo */
+#logo-top-left {
+    grid-area: top-left;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 50px; /* Logo 大小 */
+    height: auto;
+}
+
+/* 右下角 Logo */
+#logo-bottom-right {
+    grid-area: top-right;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 50px;
+    height: auto;
+}
+
+/* 主内容区域 */
+.main-content {
+    grid-area: main;
     display: flex;
     flex-direction: column;
-    height: 100vh;
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 20px;
-    background-color: #87ceeb;
-    font-size: 1rem;
-    font-weight: bold;
-}
-
-.header-left, .header-right {
-    flex: 1;
-}
-
-main {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    justify-content: center; /* 垂直居中 */
+    align-items: flex-start; /* 左对齐 */
     padding: 20px;
     gap: 20px;
 }
 
-.content {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 80%;
-    gap: 40px;
+/* 标题样式 */
+#title {
+    font-size: 3rem; /* 大字体标题 */
+    font-family: "Times New Roman", serif; /* 花体字体 */
 }
 
-.title {
-    font-size: 3rem;
-    font-family: "Times New Roman", serif;
-    font-weight: bold;
+/* 描述段落样式 */
+#description {
+    font-size: 1rem; /* 正文文字大小 */
+    line-height: 1.5; /* 行间距 */
 }
 
-.description {
-    max-width: 50%;
-    font-size: 1rem;
-    line-height: 1.5;
-}
-
-.audio-container {
-    margin-top: 20px;
-}
-
-footer {
-    text-align: center;
-    font-size: 0.8rem;
+/* 页脚文字 */
+.footer {
+    grid-area: footer;
+    text-align: center; /* 居中对齐 */
+    font-size: 0.8rem; /* 页脚文字较小 */
     padding: 10px;
-    background-color: #87ceeb;
 }
