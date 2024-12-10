@@ -1,7 +1,7 @@
 body {
     margin: 20px;
     padding: 20px;
-    background-color: black;
+    background-color: #d1ffe7;
     color: white;
     font-family: Arial, sans-serif;
     display: flex;
@@ -52,10 +52,11 @@ body {
 
 /* 页脚文字 */
 .footer {
+    grid-area: footer;
     text-align: center;
     font-size: 0.8rem;
     padding: 10px;
-    background-color: #660000; /* 页脚背景稍深 */
+    background-color: #000000; /* 页脚背景稍深 */
 }
 
 audio {
